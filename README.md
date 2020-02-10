@@ -1,6 +1,9 @@
 # django-lab
 Testing Django
 
+## Reference
+https://docs.djangoproject.com/en/3.0/intro/tutorial01/
+
 ## Initial step
 ```
 django-admin startproject todo
@@ -27,4 +30,7 @@ Testing the server
 python manage.py runserver
 ```
 
-
+Adding a todo-app to the todosystem
+```
+python manage.py startapp todoapp
+```
