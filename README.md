@@ -1,0 +1,2 @@
+# django-lab
+Testing Django
