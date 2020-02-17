@@ -35,7 +35,7 @@
             "name": "Python: Django",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/todo/manage.py",
+            "program": "${workspaceFolder}/todoproject/manage.py",
             "console": "integratedTerminal",
             "args": [
                 "runserver",
