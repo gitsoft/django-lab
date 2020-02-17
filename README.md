@@ -10,6 +10,7 @@ Steps to get started
 * Create a Django project
 * Create a Django app insida the project
 * Add Django rest framework to project 
+* install SqlLite browser (brew cask install db-browser-for-sqlite)
 
 ## Teminology
 A Django project is a collection of configuration and apps for a particular website
@@ -119,6 +120,33 @@ urlpatterns = [
 ```
 touch todoapp/urls.py
 ```
+
+Add data definitions to todoapp models
+todoproject/todoapp/models.py
+
+
+```
+python todoproject/manage.py makemigrations todoapp
+```
+makemigrations generated todoproject/todoapp/migrations/0001_initial.py which contains the sql commands tht creates the tables
+
+Review generated sql
+```
+python todoproject/manage.py sqlmigrate todoapp 0001 
+```
+
+Write model changes to database
+```
+python todoproject/manage.py migrate
+```
+
+General project check (builtin basic self tests)
+```
+ python todoproject/manage.py check
+```
+
+
+open todoproject/db.sqlite3 with DB Browser for Sqllite to view the results
 
 ```
 python todoproject/manage.py createsuperuser
