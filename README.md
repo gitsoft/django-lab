@@ -145,12 +145,44 @@ General project check (builtin basic self tests)
  python todoproject/manage.py check
 ```
 
-
 open todoproject/db.sqlite3 with DB Browser for Sqllite to view the results
+
+Play around with the included Django daabase API
+
+```
+python todoproject/manage.py shell
+```
+ref: https://docs.djangoproject.com/en/3.0/topics/db/queries/
+
+
+```
+>>> from todoapp.models import Todo, Todolist
+>>> Todolist.objects.all()
+```
+
+Query Django utils
+```
+>>> from django.utils import timezone
+>>> current_year = timezone.now().year
+>>> Todolist.objects.get(pub_date__year=current_year)
+```
+
+```
+>>> Todolist.objects.get(id=2)
+```
+
+More shell samples here : https://docs.djangoproject.com/en/3.0/intro/tutorial02/
 
 ```
 python todoproject/manage.py createsuperuser
 ```
+
+## Security issues
+code /Users/bernie/repos/exploitdb/exploits/python/webapps/40129.txt
+http://www.vulnerability-lab.com/get_content.php?id=1869
+
+code /Users/bernie/repos/exploitdb/exploits/python/webapps/47879.md
+
 
 ## Django REST framework
 https://www.django-rest-framework.org/
