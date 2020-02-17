@@ -177,6 +177,8 @@ More shell samples here : https://docs.djangoproject.com/en/3.0/intro/tutorial02
 python todoproject/manage.py createsuperuser
 ```
 
+
+
 ## Security issues
 code /Users/bernie/repos/exploitdb/exploits/python/webapps/40129.txt
 http://www.vulnerability-lab.com/get_content.php?id=1869
