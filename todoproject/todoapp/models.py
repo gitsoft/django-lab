@@ -17,7 +17,7 @@ class Todolist(models.Model):
 class Todo(models.Model):
     short_text = models.CharField(max_length=100)
     long_text = models.CharField(max_length=200)
-    completed = models.BooleanField
+    completed = models.BooleanField(default=False)
     created_date = models.DateTimeField('date created')
     todolist = models.ForeignKey(Todolist, on_delete=models.CASCADE)
 
