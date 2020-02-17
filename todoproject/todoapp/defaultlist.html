@@ -1,0 +1,9 @@
+{% if latest_todos %}
+    <ul>
+    {% for todo in latest_todos %}
+        <li><a href="/todoapp/{{ todo.id }}/details/">{{ todo.short_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>There is no spoon</p>
+{% endif %}

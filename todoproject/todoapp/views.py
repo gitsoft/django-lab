@@ -3,6 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
+from django.template import loader
 
 from .models import Todo
 
@@ -11,8 +12,13 @@ from .models import Todo
 
 def defaultlist(request):
     latest_todos = Todo.objects.order_by('-created_date')[:20]
-    output = ', '.join([todo.short_text for todo in latest_todos])
-    return HttpResponse(output)
+    # output = ', '.join([todo.short_text for todo in latest_todos])
+    # return HttpResponse(output)
+    template = loader.get_template('defaultlist.html') 
+    context = {
+        'latest_todos': latest_todos,
+    }
+    return HttpResponse(template.render(context, request))    
 
 def todolist(request, todolist_id):
     response = "You're looking at the todo list with id %s."
