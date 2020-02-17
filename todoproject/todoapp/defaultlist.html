@@ -1,7 +1,7 @@
 {% if latest_todos %}
     <ul>
     {% for todo in latest_todos %}
-        <li><a href="/todoapp/{{ todo.id }}/details/">{{ todo.short_text }}</a></li>
+        <li><a href="{% url 'results' todo.id %}">{{ todo.short_text }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
