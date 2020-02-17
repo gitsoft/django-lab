@@ -120,6 +120,9 @@ urlpatterns = [
 touch todoapp/urls.py
 ```
 
+```
+python todoproject/manage.py createsuperuser
+```
 
 ## Django REST framework
 https://www.django-rest-framework.org/
