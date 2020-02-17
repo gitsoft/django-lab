@@ -90,9 +90,36 @@ python todoproject/manage.py startapp todoapp
 ```
 
 Added a new view 
+edit todoapp/views.py to add the new view
+A simple test
+```
+from django.http import HttpResponse
+
+
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")
+```
+
+Add URL config
+
+```
+touch todoapp/urls.py
+```
+Add url config for the todo app
+```
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
 ```
 
 ```
+touch todoapp/urls.py
+```
+
 
 ## Django REST framework
 https://www.django-rest-framework.org/
