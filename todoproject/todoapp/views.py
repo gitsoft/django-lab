@@ -1,6 +1,5 @@
 from django.core import serializers
-from django.shortcuts import render
-
+from django.shortcuts import get_object_or_404, render
 # Create your views here.
 from django.http import HttpResponse
 from django.template import loader
@@ -25,11 +24,13 @@ def todolist(request, todolist_id):
     return HttpResponse(response % todolist_id)
 
 def tododetails(request, todo_id):
-    todo = Todo.objects.get(id=todo_id)
-    
+    todo = get_object_or_404(Todo, id=todo_id)
+    # todo = Todo.objects.get(id=todo_id)
+    return render(request, 'details.html', {'todo': todo})
+
     # output = str(todo.short_text) + ' <br>' + str(todo.long_text) + ' <br>' + str(todo.completed) + ' <br>' + str(todo.created_date) 
-    output = serializers.serialize("json", [todo])
-    return HttpResponse(output)
+    # output = serializers.serialize("json", [todo])
+    # return HttpResponse(output)
 
     # return HttpResponse("You're looking at todo %s." % todo_id)
 
