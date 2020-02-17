@@ -16,13 +16,12 @@ A Django project is a collection of configuration and apps for a particular webs
 
 An app is a Web application the projectfolder that does something (blog, todolist, api, users)
 
-
 ## Reference
 https://docs.djangoproject.com/en/3.0/intro/tutorial01/
 
 ## Initial step
 ```
-django-admin startproject todo
+django-admin startproject todoproject
 ```
 
 set venv
@@ -64,7 +63,6 @@ Enable both settings
 python.terminal.activateEnvironment : true
 ```
 
-
 install dependencies (if any)
 ```
 pip install -r requirements.txt
@@ -77,17 +75,18 @@ pip install Django
 
 Initialize database
 ```
-python manage.py migrate
+python todoproject/manage.py migrate
 ```
+A project db.sqlite3 is created and populated with default tables
 
 Testing the server
 ```
-python manage.py runserver
+python todoproject/manage.py runserver
 ```
 
 Adding a todo-app to the todosystem
 ```
-python manage.py startapp todoapp
+python todoproject/manage.py startapp todoapp
 ```
 
 Added a new view 
